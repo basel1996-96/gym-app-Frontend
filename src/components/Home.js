@@ -1,11 +1,13 @@
 //styling
 import { Center, Image, Center2 } from "../styles";
+import 'react-calendar/dist/Calendar.css';
 //
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Slide } from 'react-slideshow-image';
 import '../App.css';
 import 'react-slideshow-image/dist/styles.css'
+import Calendar from 'react-calendar'
 //components
 import Admin from "./Admin";
 import Owner from "./Owner";
@@ -76,10 +78,14 @@ const Home = () => {
           </div>
         </Slide>
       </div>
+      <br></br>
+      <Calendar className="bb" />
       </Center2>
+     
     
         </Center>
       )}
+      
     </>
   );
 };

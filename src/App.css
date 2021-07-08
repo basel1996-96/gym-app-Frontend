@@ -41,7 +41,7 @@
   align-items: center;
   justify-content: center;
   background-size: cover;
-  height: 500px;
+  height: 400px;
 }
 
 .each-slide span {
@@ -76,6 +76,8 @@
 .bb{
     border-radius: 30px;
     align-items: center;
+    text-align: center;
+    margin: auto;
 }
 .navbar-inner {
   background-color:transparent;
@@ -85,5 +87,13 @@
   text-align: center;
   color: rgb(245, 252, 252);
   font-family: 'Courier New', Courier, monospace;
+}
+.react-calendar__month-view__weekdays {
+  color: gray;
+}
+
+.react-calendar__navigation button {
+  font-size: 1em;
+  color: black;
 }
 
