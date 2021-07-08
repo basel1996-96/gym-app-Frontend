@@ -1,14 +1,23 @@
 //styling
-import { Center, Image } from "../styles";
+import { Center, Image, Center2 } from "../styles";
 //
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import { Slide } from 'react-slideshow-image';
+import '../App.css';
+import 'react-slideshow-image/dist/styles.css'
 //components
 import Admin from "./Admin";
 import Owner from "./Owner";
 import Member from "./Member";
 import Coach from "./Coach";
+
+const slideImages = [
+  'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGd5bXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80',
+  'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Z3ltfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80',
+  'https://i.pinimg.com/originals/57/42/86/574286fe18f68a4ce3052f7e5164ba14.jpg',
+];
+
 
 const Home = () => {
   const user = useSelector((state) => state.authReducer.user);
@@ -46,10 +55,29 @@ const Home = () => {
             </button>
           </Link>
 
-          <Image
-            src="https://i.pinimg.com/originals/c9/db/04/c9db04ca306f23d1db03820adc99862f.png"
-            alt="logo"
-          />
+          <Center2>
+      <div>
+        <Slide easing="ease">
+          <div className="each-slide">
+            <div className="image" style={{'backgroundImage': `url(${slideImages[0]})`}}>
+             
+            </div>
+          </div>
+          <div className="each-slide">
+            <div className="image" style={{'backgroundImage': `url(${slideImages[1]})`}}>
+             
+            </div>
+          </div>
+          <div className="each-slide">
+            <div className="image" style={{'backgroundImage': `url(${slideImages[2]})`}}>
+             
+            </div>
+           
+          </div>
+        </Slide>
+      </div>
+      </Center2>
+    
         </Center>
       )}
     </>

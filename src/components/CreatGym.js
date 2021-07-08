@@ -1,4 +1,4 @@
-import { FlexStyleVer, FormCenter } from "../styles";
+import { FlexStyleVer, FormCenter,Center2 } from "../styles";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createGym } from "../store/actions/gymActions";
@@ -48,8 +48,9 @@ const CreatGym = () => {
   };
 
   return (
+    <Center2>
     <FormCenter onSubmit={handleSubmit}>
-      <h3> Creat New Gym</h3>
+      <h3> Create New Gym</h3>
       <br />
 
       <div className="form-group">
@@ -87,6 +88,7 @@ const CreatGym = () => {
         Create
       </button>
     </FormCenter>
+    </Center2>
   );
 };
 

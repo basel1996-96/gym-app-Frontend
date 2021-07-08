@@ -1,9 +1,12 @@
-import { FormCenter } from "../../styles";
+import { FormCenter,Center2, GlobalStyle1 } from "../../styles";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signin } from "../../store/actions/authActions";
 
 import { useHistory } from "react-router-dom";
+import { Slide } from 'react-slideshow-image';
+import '../../App.css';
+import 'react-slideshow-image/dist/styles.css'
 
 const Signin = () => {
   const dispatch = useDispatch();
@@ -37,8 +40,16 @@ const Signin = () => {
   };
 
   const toggle = () => (_toggle ? setToggle(false) : setToggle(true));
+  const slideImages = [
+'https://www.crossfit.com/wp-content/uploads/2020/10/19092755/2018072814475780_ND_ND5_6593-1-copy-2048x1152.jpg',
+    'https://ak.picdn.net/shutterstock/videos/12028625/thumb/1.jpg',
+    'https://www.paulinefraser.co.uk/images/made/uploads/20181005_ASV_SPIN_CLASS_023_690_461_tl_80_s_c1.png',
+  ];
+  
 
   return (
+    
+    <Center2>
     <FormCenter onSubmit={handleSubmit}>
       <h3> Sign In</h3>
       <br />
@@ -91,6 +102,32 @@ const Signin = () => {
         Sign In
       </button>
     </FormCenter>
+
+     
+      <div>
+        <Slide easing="ease">
+          <div className="each-slide">
+            <div className="image" style={{'backgroundImage': `url(${slideImages[0]})`}}>
+             
+            </div>
+          </div>
+          <div className="each-slide">
+            <div className="image" style={{'backgroundImage': `url(${slideImages[1]})`}}>
+             
+            </div>
+          </div>
+          <div className="each-slide">
+            <div className="image" style={{'backgroundImage': `url(${slideImages[2]})`}}>
+             
+            </div>
+           
+          </div>
+        </Slide>
+      </div>
+      
+    
+    </Center2>
+    
   );
 };
 

@@ -1,4 +1,4 @@
-import { FormCenter } from "../../styles";
+import { FormCenter , Center2} from "../../styles";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signupOwner } from "../../store/actions/authActions";
@@ -43,8 +43,9 @@ const Signup = () => {
   };
 
   return (
+    <Center2>
     <FormCenter onSubmit={handleSubmit}>
-      <h3> Creat New User</h3>
+      <h3> Create New User</h3>
       <br />
 
       <div class="col-auto">
@@ -119,6 +120,7 @@ const Signup = () => {
         Create
       </button>
     </FormCenter>
+    </Center2>
   );
 };
 

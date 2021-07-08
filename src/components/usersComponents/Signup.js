@@ -1,4 +1,4 @@
-import { FlexStyleVer, FormCenter } from "../../styles";
+import { FlexStyleVer, FormCenter,Center2 } from "../../styles";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signup } from "../../store/actions/authActions";
@@ -43,8 +43,9 @@ const Signup = () => {
   };
 
   return (
+    <Center2>
     <FormCenter onSubmit={handleSubmit}>
-      <h3> Creat New User</h3>
+      <h3> Create New User</h3>
       <br />
 
       <div class="col-auto">
@@ -115,7 +116,7 @@ const Signup = () => {
       <FlexStyleVer>
         <label>Role</label>
         <select onChange={handleChange} name="type" id="type" value={user}>
-          <option>Chose ...</option>
+          <option>Choose ...</option>
           <option value="coach">Coach</option>
           <option value="member">Member</option>
         </select>
@@ -127,6 +128,7 @@ const Signup = () => {
         Create
       </button>
     </FormCenter>
+    </Center2>
   );
 };
 

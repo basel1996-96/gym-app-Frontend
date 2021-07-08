@@ -1,8 +1,17 @@
 import styled from "styled-components";
 import { NavLink, Link } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
 
 export const Center = styled.div`
   text-align: center;
+  background: rgba(0, 0, 0, 0.685);
+    color: white;
+    padding: 20px;
+    border-radius: 45px;
+    max-width: 700px;
+    margin: 30px;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
   p {
     font-weight: bold;
@@ -10,9 +19,19 @@ export const Center = styled.div`
 
   h1 {
     font-size: 60px;
-    font-family: Brush Script MT;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-top: 50px;
   }
+`;
+export const Center2 = styled.div`
+background: rgba(0, 0, 0, 0.685);
+    color: white;
+    padding: 20px;
+    border-radius: 45px;
+    max-width: 700px;
+    margin: 30px;
+  align-items: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 `;
 
 export const Image = styled.img`
@@ -101,10 +120,10 @@ export const StyledButton = styled.button`
 `;
 
 export const NavB = styled.nav`
-  background-color: ${(props) => props.theme.backGroundColor};
   padding: 5px;
-  /* border-bottom: 1px solid ${(props) => props.theme.thirdColor}; */
+  border-bottom: 0px solid ${(props) => props.theme.thirdColor};
   display: flex;
+  background-color:transparent;
   justify-content: space-between;
 `;
 export const LinkItem = styled(NavLink)`
@@ -177,4 +196,44 @@ export const Sellector = styled.div`
   height: 30px;
 
   margin-left: 10%;
+
 `;
+
+export const GlobalStyle = createGlobalStyle`
+
+
+body{
+  
+  background: url("https://images.unsplash.com/photo-1580086319619-3ed498161c77?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGd5bXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+
+
+}
+`;
+export const theme = {
+  light: {
+    textColor: "black", // main font color
+    backGroundColor: "#11224B", // main background color
+    secoundColor: "gray",
+    thirdColor: "#a9f1df",
+  },
+
+  dark: {
+    textColor: "black", // main font color
+    backGroundColor: "#11224B", // main background color
+    secoundColor: "#2940d3",
+    thirdColor: "#a9f1df",
+  },
+  reverse: {
+    textColor: "black", // main font color
+    backGroundColor: "#11224B", // main background color
+    secoundColor: "#2940d3",
+    thirdColor: "#a9f1df",
+  },
+};
+

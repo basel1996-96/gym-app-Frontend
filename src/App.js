@@ -4,17 +4,32 @@ import NavBar from "./components/NavBar";
 import Signup from "./components/usersComponents/Signup";
 import Signin from "./components/usersComponents/Signin";
 import SignupOwner from "./components/usersComponents/SignupOwner";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle, theme } from "./styles";
 
 //
 import { Route, Switch } from "react-router";
 import CreatGym from "./components/CreatGym";
 import CreatClass from "./components/CreatClass";
 import ClassList from "./components/classComponent/ClassList";
+import { useState } from "react";
 
 function App() {
+  const [counter, setCounter] = useState(0);
+
+  const sw = () => {
+    setCounter(counter + 1);
+  };
+  const y = () => {
+    if (counter % 3 === 0) return "light";
+    if (counter % 3 === 1) return "dark";
+    if (counter % 3 === 2) return "reverse";
+  };
+
   return (
-    <>
-      <NavBar />
+    <ThemeProvider theme={theme[y()]}>
+ <GlobalStyle />
+      <NavBar sw={sw} />
 
       <Switch>
         <Route exact path="/">
@@ -45,7 +60,8 @@ function App() {
           <CreatGym />
         </Route>
       </Switch>
-    </>
+      </ThemeProvider>
+    
   );
 }
 

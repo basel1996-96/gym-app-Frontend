@@ -2,20 +2,24 @@ import { Link } from "react-router-dom";
 import { NavB, Logo, FlexStyle } from "../styles";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/actions/authActions";
+import '../App.css';
 
 const NavBar = (props) => {
   const user = useSelector((state) => state.authReducer.user);
   const dispatch = useDispatch();
 
   return (
-    <NavB className="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner"></div>
       <Logo exact to="/">
         <img
-          src="https://i.pinimg.com/originals/c9/db/04/c9db04ca306f23d1db03820adc99862f.png"
+          src="https://previews.123rf.com/images/subtropica/subtropica1704/subtropica170400023/75345207-train-hard-or-go-home-inspiring-workout-and-fitness-gym-motivation-quote-illustration-sign-.jpg"
           alt="logo"
+          className="bb"
         ></img>
 
-        <h2>Body Flex Gym</h2>
+        <h2 className="tt">Body Flex Gym</h2>
+        
       </Logo>
 
       <div>
@@ -54,7 +58,8 @@ const NavBar = (props) => {
           </>
         )}
       </div>
-    </NavB>
+      </div>
+    
   );
 };
 
