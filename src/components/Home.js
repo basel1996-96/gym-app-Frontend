@@ -79,7 +79,7 @@ const Home = () => {
         </Slide>
       </div>
       <br></br>
-      <Calendar className="bb" />
+     
       </Center2>
      
     
